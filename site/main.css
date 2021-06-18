@@ -30,7 +30,7 @@ html {
   grid-row-gap: 20px;
 }
 
-.simon-container .simon-button {
+.simon-container .simon-button{
   align-items: center;
   background-color: #333;
   border-radius: 10px;
@@ -55,4 +55,20 @@ html {
 
 .simon-button.blue {
   background-color: #2185D0;
+}
+.simon-button.green.light-up{
+  background-color: #25f555;
+  box-shadow: 0px 0px 20px 10px rgb(73, 255, 73);
+}
+.simon-button.red.light-up{
+  background-color: #ff4d4d;
+  box-shadow: 0px 0px 20px 10px rgb(253, 114, 114);
+}
+.simon-button.yellow.light-up{
+  background-color: #fdc210;
+  box-shadow: 0px 0px 20px 10px rgb(248, 204, 5);
+}
+.simon-button.blue.light-up{
+  background-color: #1a99fa;
+  box-shadow: 0px 0px 20px 10px rgb(44, 152, 253);
 }
