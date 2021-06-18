@@ -2,6 +2,7 @@ let greenButton = document.querySelector('.simon-button.green');
 greenButton.addEventListener('click', function() {
   alert('You clicked the green button');
 });
+
 greenButton.addEventListener('mousedown',function(){
   greenButton.setAttribute("class", "simon-button green light-up")
 });
@@ -9,6 +10,11 @@ greenButton.addEventListener('mousedown',function(){
 greenButton.addEventListener('mouseup',function(){
   greenButton.setAttribute("class", "simon-button green")
 });
+
+let myAudio = document.querySelector('#beep');
+greenButton.addEventListener('click', function(){
+  beep.play();
+},300)
 
 let redButton = document.querySelector('.simon-button.red');
 redButton.addEventListener('click', function() {
@@ -23,6 +29,9 @@ redButton.addEventListener('mouseup',function(){
   redButton.setAttribute("class", "simon-button red")
 });
 
+redButton.addEventListener('click', function(){
+  beep.play();
+},300)
 
 let yellowButton = document.querySelector('.simon-button.yellow');
 yellowButton.addEventListener('click', function() {
@@ -37,6 +46,9 @@ yellowButton.addEventListener('mouseup',function(){
   yellowButton.setAttribute("class", "simon-button yellow")
 });
 
+yellowButton.addEventListener('click', function(){
+  beep.play();
+},300)
 
 let blueButton = document.querySelector('.simon-button.blue');
 blueButton.addEventListener('click', function() {
@@ -50,3 +62,9 @@ blueButton.addEventListener('mousedown',function(){
 blueButton.addEventListener('mouseup',function(){
   blueButton.setAttribute("class", "simon-button blue")
 });
+
+blueButton.addEventListener('click', function(){
+  beep.play();
+},300)
+
+
