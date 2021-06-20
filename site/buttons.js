@@ -68,3 +68,30 @@ blueButton.addEventListener('click', function(){
 },300)
 
 
+//This sets up the basic counts for each tile
+let greenCount = 0;
+let redCount = 0;
+let yellowCount = 0;
+let blueCount = 0;
+
+//These increment the counts on click and prints the total to console
+greenButton.addEventListener('click', function(){
+  greenCount++;
+  console.log ('#greenCount',greenCount)
+});
+
+redButton.addEventListener('click', function(){
+  redCount++;
+  console.log ('#redCount',redCount)
+});
+
+yellowButton.addEventListener('click', function(){
+  yellowCount++;
+  console.log ('#yellowCount',yellowCount)
+});
+
+blueButton.addEventListener('click', function(){
+  blueCount++;
+  console.log ('#blueCount',blueCount)
+});
+
