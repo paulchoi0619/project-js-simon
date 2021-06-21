@@ -6,74 +6,66 @@ let blueCount = 0;
 
 let greenButton = document.querySelector('.simon-button.green');
 greenButton.addEventListener('click', function() {
+  beep.play();
   greenCount++;
-  console.log ('#greenCount',greenCount)
-});
-
-greenButton.addEventListener('mousedown',function(){
-  greenButton.setAttribute("class", "simon-button green light-up")
+  console.log ('#greenCount',greenCount);
 });
 
 greenButton.addEventListener('mouseup',function(){
-  greenButton.setAttribute("class", "simon-button green")
+  greenButton.setAttribute("class", "simon-button green");
 });
-
-let myAudio = document.querySelector('#beep');
-greenButton.addEventListener('click', function(){
-  beep.play();
-},300)
+greenButton.addEventListener('mousedown',function(){
+  greenButton.setAttribute("class", "simon-button green light-up");
+});
 
 let redButton = document.querySelector('.simon-button.red');
 redButton.addEventListener('click', function() {
+  beep.play();
   redCount++;
-  console.log ('#redCount',redCount)
+  console.log ('#redCount',redCount);
+  
 });
 
 redButton.addEventListener('mousedown',function(){
-  redButton.setAttribute("class", "simon-button red light-up")
+  redButton.setAttribute("class", "simon-button red light-up");
 });
 
 redButton.addEventListener('mouseup',function(){
-  redButton.setAttribute("class", "simon-button red")
+  redButton.setAttribute("class", "simon-button red");
 });
 
-redButton.addEventListener('click', function(){
-  beep.play();
-},300)
 
 let yellowButton = document.querySelector('.simon-button.yellow');
 yellowButton.addEventListener('click', function() {
+  beep.play();
   yellowCount++;
-  console.log ('#yellowCount',yellowCount)
+  console.log ('#yellowCount',yellowCount);
+  
 });
 
 yellowButton.addEventListener('mousedown',function(){
-  yellowButton.setAttribute("class", "simon-button yellow light-up")
+  yellowButton.setAttribute("class", "simon-button yellow light-up");
 });
 
 yellowButton.addEventListener('mouseup',function(){
-  yellowButton.setAttribute("class", "simon-button yellow")
+  yellowButton.setAttribute("class", "simon-button yellow");
 });
 
-yellowButton.addEventListener('click', function(){
-  beep.play();
-},300)
 
 let blueButton = document.querySelector('.simon-button.blue');
 blueButton.addEventListener('click', function() {
+  beep.play();
   blueCount++;
-  console.log ('#blueCount',blueCount)
+  console.log ('#blueCount',blueCount);
+  
 });
 
 blueButton.addEventListener('mousedown',function(){
-  blueButton.setAttribute("class", "simon-button blue light-up")
+  blueButton.setAttribute("class", "simon-button blue light-up");
 });
 
 blueButton.addEventListener('mouseup',function(){
-  blueButton.setAttribute("class", "simon-button blue")
+  blueButton.setAttribute("class", "simon-button blue");
 });
 
-blueButton.addEventListener('click', function(){
-  beep.play();
-},300)
 
