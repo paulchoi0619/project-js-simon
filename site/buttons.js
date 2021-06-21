@@ -5,14 +5,38 @@ let yellowCount = 0;
 let blueCount = 0;
 let score = document.getElementById("scoreCanvas");
 let ctx = score.getContext("2d");
+let startButton = document.querySelector(".start");
+let level =1;
+startButton.addEventListener('click',function(){
+const colors = ["green","red","yellow","blue"];
+var sequence = [];
+const random = Math.floor(Math.random() * colors.length);
+sequence.push(random);
+for (let i=0; i < level;i++){
+let color = sequence[i];
+if (color =="green"){
+greenButton.setAttribute("class", "simon-button green light-up");
+}
+else if(color=="red"){
+redButton.setAttribute("class", "simon-button red light-up"); 
+}
+else if (color=="yellow"){
+yellowButton.setAttribute("class", "simon-button yellow light-up");  
+}
+else{
+blueButton.setAttribute("class", "simon-button blue light-up");  
+}
+}
+});
 function updateScore(){
   ctx.fillStyle = 'white';
   ctx.fillRect(0, 0, score.width, score.height);
   ctx.fillStyle = 'black';
   let totalScore = greenCount+redCount+yellowCount+blueCount;
   ctx.font= "60px Arial";
-  ctx.fillText(totalScore,10,150);
+  ctx.fillText(totalScore,0,100);
   }
+
 
 let greenButton = document.querySelector('.simon-button.green');
 greenButton.addEventListener('click', function() {
@@ -73,6 +97,4 @@ blueButton.addEventListener('mousedown',function(){
 blueButton.addEventListener('mouseup',function(){
   blueButton.setAttribute("class", "simon-button blue");
 });
-
-
 
