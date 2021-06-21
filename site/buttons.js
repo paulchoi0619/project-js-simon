@@ -154,25 +154,6 @@ setTimeout(normalColor,1000,color);
 }
 }
 
-let j=0;
-let userColor;
-mySequence =[];
-while(j<level){
-
-userColor = "green";
-
-if (sequence[j].localeCompare(userColor)==0){
-  mySequence.push(userColor);
-  alert("Nice");
-  j++;
-  
-}
-else if(sequence[j].localeCompare(userColor)!=0){
-  alert("Game Over!");
-  break;
-}
-
-}
 
 level++;
 }
