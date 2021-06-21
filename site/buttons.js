@@ -32,7 +32,7 @@ function normalColor(color){
 
 
 
-var userColor;
+
 //update score when the user gets the right button
 function updateScore(){
   ctx.fillStyle = 'white';
@@ -83,6 +83,7 @@ function updateScore(){
 
 //Click Tracking
 greenButton.addEventListener('click', function() {
+
   beep.play();
   greenCount++;
   updateScore();
@@ -90,6 +91,7 @@ greenButton.addEventListener('click', function() {
 
 
 redButton.addEventListener('click', function() {
+
   beep.play();
   redCount++;
   updateScore();
@@ -152,24 +154,27 @@ setTimeout(normalColor,1000,color);
 }
 }
 
-if(greenButton.data('clicked')){
-  userColor="green";
-}
+let j=0;
+let userColor;
+mySequence =[];
+while(j<level){
 
-else if(redButton.data('clicked')){
-  userColor="red";
-}
+userColor = "green";
 
-
-if (simonColor.localeCompare(userColor)==0){
+if (sequence[j].localeCompare(userColor)==0){
   mySequence.push(userColor);
-  level++;
+  alert("Nice");
+  j++;
+  
 }
-else{
+else if(sequence[j].localeCompare(userColor)!=0){
   alert("Game Over!");
   break;
 }
 
+}
+
+level++;
 }
 });
 
