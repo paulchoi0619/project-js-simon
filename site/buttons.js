@@ -81,34 +81,7 @@ function updateScore(){
   });
 
 
-//Click Tracking
-greenButton.addEventListener('click', function() {
 
-  beep.play();
-  greenCount++;
-  updateScore();
-});
-
-
-redButton.addEventListener('click', function() {
-
-  beep.play();
-  redCount++;
-  updateScore();
-});
-
-yellowButton.addEventListener('click', function() {
-  beep.play();
-  yellowCount++;
-  updateScore();
-});
-
-
-blueButton.addEventListener('click', function() {
-  beep.play();
-  blueCount++;
-  updateScore();
-});
 
 
   let sequence = [];
@@ -153,11 +126,76 @@ blueButton.setAttribute("class", "simon-button blue light-up");
 setTimeout(normalColor,1000,color);
 }
 }
+mySequence =[];
+for(let j=0;j<level;j++){
+greenButton.addEventListener('click', function() {
+  mySequence.push("green");
+  beep.play();
+  greenCount++;
+  updateScore();
+});
+
+redButton.addEventListener('click', function() {
+  mySequence.push("red");
+  beep.play();
+  redCount++;
+  updateScore();
+});
+
+yellowButton.addEventListener('click', function() {
+  mySequence.push("yellow");
+  beep.play();
+  yellowCount++;
+  updateScore();
+});
 
 
+blueButton.addEventListener('click', function() {
+  mySequence.push("blue");
+  beep.play();
+  blueCount++;
+  updateScore();
+});
+
+if((sequence[j]!=mySequence[j]) && mySequence.length !=0){
+  alert("Game Over!");
+  break;
+}
+
+}
 level++;
 }
 });
 
 
+/*
+//Click Tracking
+greenButton.addEventListener('click', function() {
+  mySequence.push("green");
+  beep.play();
+  greenCount++;
+  updateScore();
+});
 
+
+redButton.addEventListener('click', function() {
+  mySequence.push("red");
+  beep.play();
+  redCount++;
+  updateScore();
+});
+
+yellowButton.addEventListener('click', function() {
+  mySequence("yellow");
+  beep.play();
+  yellowCount++;
+  updateScore();
+});
+
+
+blueButton.addEventListener('click', function() {
+  mySequence("blue");
+  beep.play();
+  blueCount++;
+  updateScore();
+});*/
