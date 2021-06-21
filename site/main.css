@@ -3,10 +3,11 @@
 
 }
 html {
-  background-color: #FCFCFC;
+  background-color: aliceblue;
   font-family: Arial;
   font-size: 18px;
 }
+
 
 #content {
   width: 800px;
@@ -14,12 +15,24 @@ html {
 }
 
 #content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .simon-container {
-  margin: 20px auto;
+  background: #e6ebf3;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  border-style: solid;
+  border-width: 5px;
+  margin: auto;
+  margin-top: 60px;
+  box-shadow: 1px 1px 15px 1px #888888;
+
+  /*margin: 20px auto;
   width:400px;
   height:400px;
   background-color:#fff;
@@ -27,10 +40,10 @@ html {
   grid-template-columns: 200px 200px;
   grid-row: auto auto;
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 20px;*/
 }
 
-.simon-container .simon-button{
+/*.simon-container .simon-button{
   align-items: center;
   background-color: #333;
   border-radius: 10px;
@@ -39,22 +52,78 @@ html {
   justify-content: center;
   font-size: 40px;
   font-family: sans-serif;
-}
+}*/
 
 .simon-button.green {
   background-color: #21BA45;
+  position:absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 250px 0 0 0;
+  -moz-border-radius: 250px 0 0 0;
+  -webkit-border-radius: 250px 0 0 0;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0px 0px -250px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .simon-button.red {
   background-color: #DB2828;
+  position:absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 0 250px 0 0;
+  -moz-border-radius: 0 250px 0 0;
+  -webkit-border-radius: 0 250px 0 0;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0px 0px 0px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .simon-button.yellow {
   background-color: #FBBD08;
+  position:absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 0 0 0 250px;
+  -moz-border-radius: 0 0 0 250px;
+  -webkit-border-radius: 0 0 0 250px;
+  top: 50%;
+  left: 50%;
+  margin: 0px -250px 0px -250px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .simon-button.blue {
   background-color: #2185D0;
+  position:absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 0 0 250px 0;
+  -moz-border-radius: 0 0 250px 0;
+  -webkit-border-radius: 0 0 250px 0;
+  top: 50%;
+  left: 50%;
+  margin: 0px 0px -250px 0px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 .simon-button.green.light-up{
   background-color: #25f555;
@@ -85,5 +154,5 @@ html {
   height:50px;
   width: auto;
   margin-left: 180px;
-  
+
 }
