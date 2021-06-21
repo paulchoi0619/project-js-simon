@@ -145,7 +145,7 @@ greenButton.addEventListener('click', function() {
 redButton.addEventListener('click', function() {
   mySequence.push("red");
   console.log(mySequence);
-  beep.play();
+  beep2.play();
   redCount++;
   updateScore();
 });
@@ -153,7 +153,7 @@ redButton.addEventListener('click', function() {
 yellowButton.addEventListener('click', function() {
   mySequence.push("yellow");
   console.log(mySequence);
-  beep.play();
+  beep3.play();
   yellowCount++;
   updateScore();
 });
@@ -162,7 +162,7 @@ yellowButton.addEventListener('click', function() {
 blueButton.addEventListener('click', function() {
   mySequence.push("blue");
   console.log(mySequence);
-  beep.play();
+  beep4.play();
   blueCount++;
   updateScore();
 });
