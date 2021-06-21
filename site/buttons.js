@@ -95,6 +95,37 @@ function updateScore(){
       return true;
     }
   }
+
+function green(){
+
+mySequence.push("green");
+}
+function blue(){
+mySequence[j] = "blue";
+
+}
+function red(){
+
+mySequence[j] = "red";
+
+}
+function yellow(){
+
+mySequence[j] = "yellow"
+
+}
+function human(){
+  for(let j=0;j<level;j++){
+    greenButton.addEventListener('click', green);
+    
+    redButton.addEventListener('click', red);
+    
+    yellowButton.addEventListener('click', yellow);
+
+    blueButton.addEventListener('click', blue);
+    
+  }
+}
 function generator(){
   let level =1;
   while(arrayCheck(sequence,mySequence)){
@@ -120,47 +151,16 @@ function generator(){
   setTimeout(normalColor,1000,color);
   }
   }
-  greenButton.addEventListener('click', function() {
-    mySequence.push("green");
-    beep.play();
-    greenCount++;
-    updateScore();
-  });
-  
-  redButton.addEventListener('click', function() {
-    mySequence.push("red");
-    beep.play();
-    redCount++;
-    updateScore();
-  });
-  
-  yellowButton.addEventListener('click', function() {
-    mySequence.push("yellow");
-    beep.play();
-    yellowCount++;
-    updateScore();
-  });
-  
-  
-  blueButton.addEventListener('click', function() {
-    mySequence.push("blue");
-    beep.play();
-    blueCount++;
-    updateScore();
-  });
+  human();
   level++;
 }}
 
 startButton.addEventListener('click',function(){
 generator();
 mySequence =[];
-
-
 });
 
 
-/*
-//Click Tracking
 greenButton.addEventListener('click', function() {
   mySequence.push("green");
   beep.play();
@@ -177,7 +177,7 @@ redButton.addEventListener('click', function() {
 });
 
 yellowButton.addEventListener('click', function() {
-  mySequence("yellow");
+  mySequence.push("yellow");
   beep.play();
   yellowCount++;
   updateScore();
@@ -185,8 +185,8 @@ yellowButton.addEventListener('click', function() {
 
 
 blueButton.addEventListener('click', function() {
-  mySequence("blue");
+  mySequence.push("blue");
   beep.play();
   blueCount++;
   updateScore();
-});*/
+});
