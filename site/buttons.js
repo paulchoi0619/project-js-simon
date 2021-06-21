@@ -50,32 +50,32 @@ function updateScore(){
   greenButton.addEventListener('mousedown',function(){
     greenButton.setAttribute("class", "simon-button green light-up");
   });
-  
-  
- 
-  
+
+
+
+
   redButton.addEventListener('mousedown',function(){
     redButton.setAttribute("class", "simon-button red light-up");
   });
-  
+
   redButton.addEventListener('mouseup',function(){
     redButton.setAttribute("class", "simon-button red");
   });
-  
-  
+
+
   yellowButton.addEventListener('mousedown',function(){
     yellowButton.setAttribute("class", "simon-button yellow light-up");
   });
-  
+
   yellowButton.addEventListener('mouseup',function(){
     yellowButton.setAttribute("class", "simon-button yellow");
   });
-  
-  
+
+
   blueButton.addEventListener('mousedown',function(){
     blueButton.setAttribute("class", "simon-button blue light-up");
   });
-  
+
   blueButton.addEventListener('mouseup',function(){
     blueButton.setAttribute("class", "simon-button blue");
   });
@@ -109,20 +109,20 @@ function generator(){
   setTimeout(normalColor,1000,color);
   }
   else if(color.localeCompare("red")==0){
-  redButton.setAttribute("class", "simon-button red light-up"); 
+  redButton.setAttribute("class", "simon-button red light-up");
   setTimeout(normalColor,1000,color);
   }
   else if (color.localeCompare("yellow")==0){
-  yellowButton.setAttribute("class", "simon-button yellow light-up");  
+  yellowButton.setAttribute("class", "simon-button yellow light-up");
   setTimeout(normalColor,1000,color);
   }
   else{
-  blueButton.setAttribute("class", "simon-button blue light-up");  
+  blueButton.setAttribute("class", "simon-button blue light-up");
   setTimeout(normalColor,1000,color);
   }
   }
   console.log(sequence);
-  
+
   human();
   level++;
 }}
