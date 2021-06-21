@@ -87,7 +87,7 @@ function updateScore(){
       return false;
     }
     else{
-      for(let i=0;i<sequence;i++){
+      for(let i=0;i<arr1;i++){
         if (arr1[i]!=arr2[i]){
           return false;
         }
@@ -96,36 +96,6 @@ function updateScore(){
     }
   }
 
-function green(){
-
-mySequence.push("green");
-}
-function blue(){
-mySequence[j] = "blue";
-
-}
-function red(){
-
-mySequence[j] = "red";
-
-}
-function yellow(){
-
-mySequence[j] = "yellow"
-
-}
-function human(){
-  for(let j=0;j<level;j++){
-    greenButton.addEventListener('click', green);
-    
-    redButton.addEventListener('click', red);
-    
-    yellowButton.addEventListener('click', yellow);
-
-    blueButton.addEventListener('click', blue);
-    
-  }
-}
 function generator(){
   let level =1;
   while(arrayCheck(sequence,mySequence)){
@@ -151,18 +121,21 @@ function generator(){
   setTimeout(normalColor,1000,color);
   }
   }
+  console.log(sequence);
+  
   human();
   level++;
 }}
 
 startButton.addEventListener('click',function(){
 generator();
-mySequence =[];
+
 });
 
 
 greenButton.addEventListener('click', function() {
   mySequence.push("green");
+  console.log(mySequence);
   beep.play();
   greenCount++;
   updateScore();
@@ -171,6 +144,7 @@ greenButton.addEventListener('click', function() {
 
 redButton.addEventListener('click', function() {
   mySequence.push("red");
+  console.log(mySequence);
   beep.play();
   redCount++;
   updateScore();
@@ -178,6 +152,7 @@ redButton.addEventListener('click', function() {
 
 yellowButton.addEventListener('click', function() {
   mySequence.push("yellow");
+  console.log(mySequence);
   beep.play();
   yellowCount++;
   updateScore();
@@ -186,6 +161,7 @@ yellowButton.addEventListener('click', function() {
 
 blueButton.addEventListener('click', function() {
   mySequence.push("blue");
+  console.log(mySequence);
   beep.play();
   blueCount++;
   updateScore();
