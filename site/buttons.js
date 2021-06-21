@@ -1,6 +1,13 @@
+//This sets up the basic counts for each tile
+let greenCount = 0;
+let redCount = 0;
+let yellowCount = 0;
+let blueCount = 0;
+
 let greenButton = document.querySelector('.simon-button.green');
 greenButton.addEventListener('click', function() {
-  alert('You clicked the green button');
+  greenCount++;
+  console.log ('#greenCount',greenCount)
 });
 
 greenButton.addEventListener('mousedown',function(){
@@ -18,7 +25,8 @@ greenButton.addEventListener('click', function(){
 
 let redButton = document.querySelector('.simon-button.red');
 redButton.addEventListener('click', function() {
-  alert('You clicked the red button');
+  redCount++;
+  console.log ('#redCount',redCount)
 });
 
 redButton.addEventListener('mousedown',function(){
@@ -35,7 +43,8 @@ redButton.addEventListener('click', function(){
 
 let yellowButton = document.querySelector('.simon-button.yellow');
 yellowButton.addEventListener('click', function() {
-  alert('You clicked the yellow button');
+  yellowCount++;
+  console.log ('#yellowCount',yellowCount)
 });
 
 yellowButton.addEventListener('mousedown',function(){
@@ -52,7 +61,8 @@ yellowButton.addEventListener('click', function(){
 
 let blueButton = document.querySelector('.simon-button.blue');
 blueButton.addEventListener('click', function() {
-  alert('You clicked the blue button');
+  blueCount++;
+  console.log ('#blueCount',blueCount)
 });
 
 blueButton.addEventListener('mousedown',function(){
@@ -66,32 +76,4 @@ blueButton.addEventListener('mouseup',function(){
 blueButton.addEventListener('click', function(){
   beep.play();
 },300)
-
-
-//This sets up the basic counts for each tile
-let greenCount = 0;
-let redCount = 0;
-let yellowCount = 0;
-let blueCount = 0;
-
-//These increment the counts on click and prints the total to console
-greenButton.addEventListener('click', function(){
-  greenCount++;
-  console.log ('#greenCount',greenCount)
-});
-
-redButton.addEventListener('click', function(){
-  redCount++;
-  console.log ('#redCount',redCount)
-});
-
-yellowButton.addEventListener('click', function(){
-  yellowCount++;
-  console.log ('#yellowCount',yellowCount)
-});
-
-blueButton.addEventListener('click', function(){
-  blueCount++;
-  console.log ('#blueCount',blueCount)
-});
 
