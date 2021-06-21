@@ -3,14 +3,23 @@ let greenCount = 0;
 let redCount = 0;
 let yellowCount = 0;
 let blueCount = 0;
+let score = document.getElementById("scoreCanvas");
+let ctx = score.getContext("2d");
+function updateScore(){
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, score.width, score.height);
+  ctx.fillStyle = 'black';
+  let totalScore = greenCount+redCount+yellowCount+blueCount;
+  ctx.font= "60px Arial";
+  ctx.fillText(totalScore,10,150);
+  }
 
 let greenButton = document.querySelector('.simon-button.green');
 greenButton.addEventListener('click', function() {
   beep.play();
   greenCount++;
-  console.log ('#greenCount',greenCount);
+  updateScore();
 });
-
 greenButton.addEventListener('mouseup',function(){
   greenButton.setAttribute("class", "simon-button green");
 });
@@ -22,8 +31,7 @@ let redButton = document.querySelector('.simon-button.red');
 redButton.addEventListener('click', function() {
   beep.play();
   redCount++;
-  console.log ('#redCount',redCount);
-  
+  updateScore();
 });
 
 redButton.addEventListener('mousedown',function(){
@@ -39,8 +47,7 @@ let yellowButton = document.querySelector('.simon-button.yellow');
 yellowButton.addEventListener('click', function() {
   beep.play();
   yellowCount++;
-  console.log ('#yellowCount',yellowCount);
-  
+  updateScore();
 });
 
 yellowButton.addEventListener('mousedown',function(){
@@ -56,8 +63,7 @@ let blueButton = document.querySelector('.simon-button.blue');
 blueButton.addEventListener('click', function() {
   beep.play();
   blueCount++;
-  console.log ('#blueCount',blueCount);
-  
+  updateScore();
 });
 
 blueButton.addEventListener('mousedown',function(){
@@ -67,5 +73,6 @@ blueButton.addEventListener('mousedown',function(){
 blueButton.addEventListener('mouseup',function(){
   blueButton.setAttribute("class", "simon-button blue");
 });
+
 
 
