@@ -80,10 +80,6 @@ function updateScore(){
     blueButton.setAttribute("class", "simon-button blue");
   });
 
-
-
-
-
   let sequence = [];
   let mySequence =[];
   function arrayCheck(arr1,arr2){
@@ -99,72 +95,67 @@ function updateScore(){
       return true;
     }
   }
+function generator(){
+  let level =1;
+  while(arrayCheck(sequence,mySequence)){
+  const colors = ["green","red","yellow","blue"];
+  const simonColor = Math.floor(Math.random() * colors.length);
+  sequence.push(colors[simonColor]);
+  for (let i=0; i < level;i++){
+  let color = sequence[i];
+  if (color.localeCompare("green")== 0){
+  greenButton.setAttribute("class", "simon-button green light-up");
+  setTimeout(normalColor,1000,color);
+  }
+  else if(color.localeCompare("red")==0){
+  redButton.setAttribute("class", "simon-button red light-up"); 
+  setTimeout(normalColor,1000,color);
+  }
+  else if (color.localeCompare("yellow")==0){
+  yellowButton.setAttribute("class", "simon-button yellow light-up");  
+  setTimeout(normalColor,1000,color);
+  }
+  else{
+  blueButton.setAttribute("class", "simon-button blue light-up");  
+  setTimeout(normalColor,1000,color);
+  }
+  }
+  greenButton.addEventListener('click', function() {
+    mySequence.push("green");
+    beep.play();
+    greenCount++;
+    updateScore();
+  });
+  
+  redButton.addEventListener('click', function() {
+    mySequence.push("red");
+    beep.play();
+    redCount++;
+    updateScore();
+  });
+  
+  yellowButton.addEventListener('click', function() {
+    mySequence.push("yellow");
+    beep.play();
+    yellowCount++;
+    updateScore();
+  });
+  
+  
+  blueButton.addEventListener('click', function() {
+    mySequence.push("blue");
+    beep.play();
+    blueCount++;
+    updateScore();
+  });
+  level++;
+}}
 
 startButton.addEventListener('click',function(){
-let level =1;
-while(arrayCheck(sequence,mySequence)){
-const colors = ["green","red","yellow","blue"];
-const simonColor = Math.floor(Math.random() * colors.length);
-
-sequence.push(colors[simonColor]);
-for (let i=0; i < level;i++){
-let color = sequence[i];
-if (color.localeCompare("green")== 0){
-greenButton.setAttribute("class", "simon-button green light-up");
-setTimeout(normalColor,1000,color);
-}
-else if(color.localeCompare("red")==0){
-redButton.setAttribute("class", "simon-button red light-up"); 
-setTimeout(normalColor,1000,color);
-}
-else if (color.localeCompare("yellow")==0){
-yellowButton.setAttribute("class", "simon-button yellow light-up");  
-setTimeout(normalColor,1000,color);
-}
-else{
-blueButton.setAttribute("class", "simon-button blue light-up");  
-setTimeout(normalColor,1000,color);
-}
-}
+generator();
 mySequence =[];
-for(let j=0;j<level;j++){
-greenButton.addEventListener('click', function() {
-  mySequence.push("green");
-  beep.play();
-  greenCount++;
-  updateScore();
-});
-
-redButton.addEventListener('click', function() {
-  mySequence.push("red");
-  beep.play();
-  redCount++;
-  updateScore();
-});
-
-yellowButton.addEventListener('click', function() {
-  mySequence.push("yellow");
-  beep.play();
-  yellowCount++;
-  updateScore();
-});
 
 
-blueButton.addEventListener('click', function() {
-  mySequence.push("blue");
-  beep.play();
-  blueCount++;
-  updateScore();
-});
-
-if((sequence[j]!=mySequence[j]) && mySequence.length !=0){
-  alert("Game Over!");
-  break;
-}
-
-}
-level++;
-}
 });
 
 
