@@ -3,31 +3,37 @@ let greenCount = 0;
 let redCount = 0;
 let yellowCount = 0;
 let blueCount = 0;
+
+let greenButton = document.querySelector('.simon-button.green');
+let redButton = document.querySelector('.simon-button.red');
+let yellowButton = document.querySelector('.simon-button.yellow');
+let blueButton = document.querySelector('.simon-button.blue');
+
+//Score Counter
 let score = document.getElementById("scoreCanvas");
 let ctx = score.getContext("2d");
 let startButton = document.querySelector(".start");
-let level =1;
-startButton.addEventListener('click',function(){
-const colors = ["green","red","yellow","blue"];
-var sequence = [];
-const random = Math.floor(Math.random() * colors.length);
-sequence.push(random);
-for (let i=0; i < level;i++){
-let color = sequence[i];
-if (color =="green"){
-greenButton.setAttribute("class", "simon-button green light-up");
+
+//function for returning the color of Simon back to normal
+function normalColor(color){
+  if(color == "green"){
+    return greenButton.setAttribute("class", "simon-button green")
+  }
+  else if(color == "red"){
+    return redButton.setAttribute("class", "simon-button red")
+  }
+  else if (color == "yellow"){
+  return yellowButton.setAttribute("class", "simon-button yellow")
+  }
+  else{
+    return blueButton.setAttribute("class", "simon-button blue")
+  }
 }
-else if(color=="red"){
-redButton.setAttribute("class", "simon-button red light-up"); 
-}
-else if (color=="yellow"){
-yellowButton.setAttribute("class", "simon-button yellow light-up");  
-}
-else{
-blueButton.setAttribute("class", "simon-button blue light-up");  
-}
-}
-});
+
+
+
+var userColor;
+//update score when the user gets the right button
 function updateScore(){
   ctx.fillStyle = 'white';
   ctx.fillRect(0, 0, score.width, score.height);
@@ -38,63 +44,134 @@ function updateScore(){
   }
 
 
-let greenButton = document.querySelector('.simon-button.green');
+  greenButton.addEventListener('mouseup',function(){
+    greenButton.setAttribute("class", "simon-button green");
+  });
+  greenButton.addEventListener('mousedown',function(){
+    greenButton.setAttribute("class", "simon-button green light-up");
+  });
+  
+  
+ 
+  
+  redButton.addEventListener('mousedown',function(){
+    redButton.setAttribute("class", "simon-button red light-up");
+  });
+  
+  redButton.addEventListener('mouseup',function(){
+    redButton.setAttribute("class", "simon-button red");
+  });
+  
+  
+  yellowButton.addEventListener('mousedown',function(){
+    yellowButton.setAttribute("class", "simon-button yellow light-up");
+  });
+  
+  yellowButton.addEventListener('mouseup',function(){
+    yellowButton.setAttribute("class", "simon-button yellow");
+  });
+  
+  
+  blueButton.addEventListener('mousedown',function(){
+    blueButton.setAttribute("class", "simon-button blue light-up");
+  });
+  
+  blueButton.addEventListener('mouseup',function(){
+    blueButton.setAttribute("class", "simon-button blue");
+  });
+
+
+//Click Tracking
 greenButton.addEventListener('click', function() {
   beep.play();
   greenCount++;
   updateScore();
 });
-greenButton.addEventListener('mouseup',function(){
-  greenButton.setAttribute("class", "simon-button green");
-});
-greenButton.addEventListener('mousedown',function(){
-  greenButton.setAttribute("class", "simon-button green light-up");
-});
 
-let redButton = document.querySelector('.simon-button.red');
+
 redButton.addEventListener('click', function() {
   beep.play();
   redCount++;
   updateScore();
 });
 
-redButton.addEventListener('mousedown',function(){
-  redButton.setAttribute("class", "simon-button red light-up");
-});
-
-redButton.addEventListener('mouseup',function(){
-  redButton.setAttribute("class", "simon-button red");
-});
-
-
-let yellowButton = document.querySelector('.simon-button.yellow');
 yellowButton.addEventListener('click', function() {
   beep.play();
   yellowCount++;
   updateScore();
 });
 
-yellowButton.addEventListener('mousedown',function(){
-  yellowButton.setAttribute("class", "simon-button yellow light-up");
-});
 
-yellowButton.addEventListener('mouseup',function(){
-  yellowButton.setAttribute("class", "simon-button yellow");
-});
-
-
-let blueButton = document.querySelector('.simon-button.blue');
 blueButton.addEventListener('click', function() {
   beep.play();
   blueCount++;
   updateScore();
 });
 
-blueButton.addEventListener('mousedown',function(){
-  blueButton.setAttribute("class", "simon-button blue light-up");
+
+  let sequence = [];
+  let mySequence =[];
+  function arrayCheck(arr1,arr2){
+    if(arr1.length!=arr2.length){
+      return false;
+    }
+    else{
+      for(let i=0;i<sequence;i++){
+        if (arr1[i]!=arr2[i]){
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+
+startButton.addEventListener('click',function(){
+let level =1;
+while(arrayCheck(sequence,mySequence)){
+const colors = ["green","red","yellow","blue"];
+const simonColor = Math.floor(Math.random() * colors.length);
+
+sequence.push(colors[simonColor]);
+for (let i=0; i < level;i++){
+let color = sequence[i];
+if (color.localeCompare("green")== 0){
+greenButton.setAttribute("class", "simon-button green light-up");
+setTimeout(normalColor,1000,color);
+}
+else if(color.localeCompare("red")==0){
+redButton.setAttribute("class", "simon-button red light-up"); 
+setTimeout(normalColor,1000,color);
+}
+else if (color.localeCompare("yellow")==0){
+yellowButton.setAttribute("class", "simon-button yellow light-up");  
+setTimeout(normalColor,1000,color);
+}
+else{
+blueButton.setAttribute("class", "simon-button blue light-up");  
+setTimeout(normalColor,1000,color);
+}
+}
+
+if(greenButton.data('clicked')){
+  userColor="green";
+}
+
+else if(redButton.data('clicked')){
+  userColor="red";
+}
+
+
+if (simonColor.localeCompare(userColor)==0){
+  mySequence.push(userColor);
+  level++;
+}
+else{
+  alert("Game Over!");
+  break;
+}
+
+}
 });
 
-blueButton.addEventListener('mouseup',function(){
-  blueButton.setAttribute("class", "simon-button blue");
-});
+
 
