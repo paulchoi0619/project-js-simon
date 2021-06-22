@@ -59,21 +59,25 @@ function updateScore(){
     if (color.localeCompare("green")== 0){
      
       greenButton.setAttribute("class", "simon-button green light-up");
+      beep.play();
       setTimeout(normalColor,500,color);
       }
       else if(color.localeCompare("red")==0){
        
       redButton.setAttribute("class", "simon-button red light-up");
+      beep2.play();
       setTimeout(normalColor,500,color);
       }
       else if (color.localeCompare("yellow")==0){
         
       yellowButton.setAttribute("class", "simon-button yellow light-up");
+      beep3.play();
       setTimeout(normalColor,500,color);
       }
       else{
       
       blueButton.setAttribute("class", "simon-button blue light-up");
+      beep4.play();
       setTimeout(normalColor,500,color);
       }
   }
