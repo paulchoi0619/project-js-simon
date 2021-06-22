@@ -18,6 +18,7 @@ html {
 }
 
 #content h1 {
+  color:white;
   font-size: 4rem;
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -148,6 +149,7 @@ html {
 .score{
   margin-left:520px;
   font-size: 30px;
+  color: white;
 }
 .canvas{
   border:1px solid;
