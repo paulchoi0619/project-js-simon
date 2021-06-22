@@ -53,7 +53,7 @@ function updateScore(){
       return false;
     
   }
-
+//helper function for Simon light
   function lightUp(color){
     
     if (color.localeCompare("green")== 0){
@@ -78,6 +78,8 @@ function updateScore(){
       }
   }
 
+
+//Handles Simon choosing sequence
 function simonLight(){
   const simonColor = Math.floor(Math.random() * colors.length);
   sequence.push(colors[simonColor]);
@@ -105,6 +107,7 @@ let step = 0;
 const colors = ["green","red","yellow","blue"];
 
   startButton.addEventListener('click',function(){
+    //upon clicking the start button
     if(sequence.length==0){
     computerStep++;
     simonLight();}

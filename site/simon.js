@@ -1,5 +1,6 @@
 // This file contains the game logic.
 // All the event-listening should happen in buttons.js
+/*
 let options = ["greenButton", "redButton", "yellowButton", "blueButton"]; //this may be the id
 let round = 1;
 let i = 0;
@@ -60,3 +61,4 @@ function lightUp() {
     clearColor();
   }
 }
+*/
