@@ -6,7 +6,7 @@ html {
   background-color: aliceblue;
   font-family: Arial;
   font-size: 18px;
-  background-image: url(https://inhabitat.com/wp-content/blogs.dir/1/files/2018/02/wood-600x480.jpg);
+  background-image: url("boardgame.png");
   background-size: cover;
   background-repeat: repeat;
 }
@@ -21,6 +21,7 @@ html {
   font-size: 4rem;
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top:100px;
 }
 
 .simon-container {
